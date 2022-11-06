@@ -23,7 +23,7 @@ const config: HardhatUserConfig = {
     shardeum: {
       url: SHARDEUM_RPC,
       accounts: [privateKey],
-      chainId: 8080,
+      chainId: 8081,
     }
   },
 };
