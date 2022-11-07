@@ -9,6 +9,7 @@ export default async function handler(
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
   }
+  console.log("boddy : ", req.body);
   const address = req.body.address;
 
   console.log(address);

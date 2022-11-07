@@ -2,13 +2,20 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { useAddress, useDisconnect } from '@thirdweb-dev/react';
+
+
 const navigation = [
   { name: 'Store', href: '/store', current: true },
   { name: 'Home', href: '/', current: false },
 ];
 import Image from  'next/image';
-import img from "../../public/dwlogo.png";
+import logo from "../../public/dwlogo.png";
+import profile from "../../public/profile.jpg";
 export default function Example() {
+  const address = useAddress();
+  const disconnect = useDisconnect();
+  console.log("my address : ",address);
   return (
     <Disclosure as="nav" className="bg-gray-100">
       {({ open }) => (
@@ -31,14 +38,14 @@ export default function Example() {
                   <div>
 
                   <Link href="/">
-                  <Image src={img} height={50} width={50} layout="fixed" alt="dwlogo" className="mr-3 h-8"/>
+                  <Image src={logo} height={50} width={50} layout="fixed" alt="dwlogo" className="mr-3 h-8"/>
 
                   </Link>
                   </div>
                   {/* <div>
 
                   <Link href="/">
-                  <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
+                  <Image src={logo} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
 
                   </Link>
                   </div> */}
@@ -63,23 +70,25 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="rounded-full bg-gray-200 p-1 text-gray-700 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+               
 
                 {/* Profile dropdown */}
+                {address?
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <span
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt="main img"
-                      />
+                      >
+
+                      <Image
+                        src={profile}
+                        className="h-8 w-8 rounded-full"
+
+                        alt="main logo"
+                        />
+                        </span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -110,29 +119,31 @@ export default function Example() {
                             ' block px-4 py-2 text-sm text-gray-700'
                           }>
 
-                          <Link
+                          <a
                             href="/mine"
                            >
                             My Product
-                          </Link>
+                          </a>
                               </div>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <button
+                        
+                            onClick={disconnect}
                             className={
                               (active ? 'bg-[#00564d]' : '') +
                               ' block px-4 py-2 text-sm text-gray-700'
                             }>
                             Sign out
-                          </a>
+                          </button>
                         )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
+                :<></>}
               </div>
             </div>
           </div>

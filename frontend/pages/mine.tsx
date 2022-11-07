@@ -8,11 +8,13 @@ import axios from 'axios';
 export default function Store() {
   const address = useAddress();
 
-  console.log({ address });
+  
 
   const [myPord, setMyProd] = useState([]);
   useEffect(() => {
-    axios
+    if(address){
+      console.log("add", address );
+      axios
       .post('/api/list', {
         address: address,
       })
@@ -20,7 +22,8 @@ export default function Store() {
         console.log(res);
         setMyProd(res.data.list);
       });
-  }, []);
+    }
+  }, [address]);
 
   return (
     <Layout>
