@@ -14,6 +14,10 @@ contract DecentralizedWarranty is
 {
     constructor() ERC721("DecentralizedWarranty", "DeW") {}
 
+    function _baseURI() internal pure override returns (string memory) {
+        return "https://ipfs.io/ipfs/";
+    }
+
     function safeMint(
         address to,
         uint256 tokenId,
