@@ -31,7 +31,7 @@ export default function Example() {
                   <div>
 
                   <Link href="/">
-                  <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
+                  <Image src={img} height={50} width={50} layout="fixed" alt="dwlogo" className="mr-3 h-8"/>
 
                   </Link>
                   </div>

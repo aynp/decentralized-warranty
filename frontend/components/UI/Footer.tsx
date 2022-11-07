@@ -11,6 +11,7 @@ export default function Footer() {
             <Image
               src={img}
               height={50}
+              layout="fixed"
               width={50}
               alt="dwlogo"
               className="mr-3 h-8"
