@@ -2,22 +2,16 @@ import Link from 'next/link';
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import {
-  useAddress,
-  useUser,
-  useLogin,
-  useDisconnect,
-  useMetamask,
-} from '@thirdweb-dev/react';
+import { useAddress, useDisconnect } from '@thirdweb-dev/react';
 import Image from 'next/image';
-import img from "../public/dwlogo.png";
+import img from '../public/dwlogo.png';
 
 const navigation = [{ name: 'Store', href: '/store' }];
 
 export default function Example() {
   const address = useAddress();
   const disconnect = useDisconnect();
-  console.log(address);
+
   return (
     <div className="relative overflow-hidden  bg-gray-100">
       <div className="mx-auto max-w-7xl">
@@ -40,8 +34,13 @@ export default function Example() {
                   <div className="flex w-full items-center justify-between md:w-auto">
                     <a href="#">
                       <span className="sr-only">Shopler</span>
-                      <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
-
+                      <Image
+                        src={img}
+                        height={50}
+                        width={50}
+                        alt="dwlogo"
+                        className="mr-3 h-8"
+                      />
                     </a>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md   bg-gray-100 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -93,8 +92,13 @@ export default function Example() {
                 <div className="overflow-hidden rounded-lg   bg-gray-100 shadow-md ring-1 ring-black ring-opacity-5">
                   <div className="flex items-center justify-between px-5 pt-4">
                     <div>
-                    <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
-
+                      <Image
+                        src={img}
+                        height={50}
+                        width={50}
+                        alt="dwlogo"
+                        className="mr-3 h-8"
+                      />
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md   bg-gray-100 p-2 text-gray-100 hover:bg-white hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -136,24 +140,16 @@ export default function Example() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <Link
-                    href="/store"
-                    >
-                    <span
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#00564d] px-8 py-3 text-base font-medium text-gray-100 hover:bg-[#00564d] md:py-4 md:px-10 md:text-lg">
-
-                    Store
+                  <Link href="/store">
+                    <span className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#00564d] px-8 py-3 text-base font-medium text-gray-100 hover:bg-[#00564d] md:py-4 md:px-10 md:text-lg">
+                      Store
                     </span>
                   </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link
-                    href="/login"
-                      >
-                    <span
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#ade4de] px-8 py-3 text-base font-medium text-[#00564d] hover:bg-[#00897b] md:py-4 md:px-10 md:text-lg">
-
-                    Login
+                  <Link href="/login">
+                    <span className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#ade4de] px-8 py-3 text-base font-medium text-[#00564d] hover:bg-[#00897b] md:py-4 md:px-10 md:text-lg">
+                      Login
                     </span>
                   </Link>
                 </div>
