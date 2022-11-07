@@ -20,4 +20,15 @@ async function listNFTs(address : string) {
   return listNFTs;
 }
 
-export { mintNFT, listNFTs };
+async function getTokenURIs(tokenIDs : string[]) {
+
+  const tokenURIs = [];
+  for (let i = 0; i < tokenIDs.length; i++) {
+    const tokenURI = Contract.tokenURI(tokenIDs[i]);
+    tokenURIs.push(tokenURI);
+  }
+
+  return await Promise.all(tokenURIs);
+}
+
+export { mintNFT, listNFTs, getTokenURIs };
