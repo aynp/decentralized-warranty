@@ -7,7 +7,7 @@ export default function Example() {
   // const connect = useMetamask();
   const address = useAddress();
   const { user } = useUser();
-
+  
   return (
     <div className="grid place-items-center h-screen">
       <div className="p-4 w-full max-w-sm rounded-lg border shadow-md sm:p-6 border-black">
