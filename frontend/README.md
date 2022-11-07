@@ -148,10 +148,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Our Team
 
-- Aryan - [LinkedIn](https://www.linkedin.com/in/aastha-berry-582160203/)
-- Abhay Kumar Mittal - [LinkedIn](https://www.linkedin.com/in/mitabhay/)
-- Priyanshu Rajput - [LinkedIn](https://www.linkedin.com/in/anurag-tripathi-7422291b4/)
-- Adarsh - [LinkedIn](https://www.linkedin.com/in/stuti-srivastava-149192203/)
+- Aryan
+- Abhay Kumar Mittal
+- Priyanshu Rajput
+- Adarsh
 
 <!-- Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
 
