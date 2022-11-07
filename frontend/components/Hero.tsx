@@ -1,19 +1,18 @@
-
-import Link from "next/link";
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from 'next/link';
+import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import {
   useAddress,
   useUser,
   useLogin,
   useLogout,
   useMetamask,
-} from "@thirdweb-dev/react";
+} from '@thirdweb-dev/react';
 const navigation = [
-  { name: "Store", href: "/store" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
+  { name: 'Store', href: '/store' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
 ];
 
 export default function Example() {
@@ -29,8 +28,7 @@ export default function Example() {
             fill="#282828"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
-            aria-hidden="true"
-          >
+            aria-hidden="true">
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
 
@@ -38,8 +36,7 @@ export default function Example() {
             <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
               <nav
                 className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-                aria-label="Global"
-              >
+                aria-label="Global">
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
                     <a href="#">
@@ -63,8 +60,7 @@ export default function Example() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="font-medium text-gray-200 hover:text-gray-400"
-                    >
+                      className="font-medium text-gray-200 hover:text-gray-400">
                       {item.name}
                     </a>
                   ))}
@@ -72,15 +68,13 @@ export default function Example() {
                     <button
                       onClick={disconnect}
                       type="submit"
-                      className="text-sm"
-                    >
+                      className="text-sm">
                       Log Out
                     </button>
                   ) : (
                     <a
                       href="/login"
-                      className="font-medium text-[#00564d] hover:text-indigo-500"
-                    >
+                      className="font-medium text-[#00564d] hover:text-indigo-500">
                       Log In
                     </a>
                   )}
@@ -95,12 +89,10 @@ export default function Example() {
               enterTo="opacity-100 scale-100"
               leave="duration-100 ease-in"
               leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
+              leaveTo="opacity-0 scale-95">
               <Popover.Panel
                 focus
-                className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden"
-              >
+                className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden">
                 <div className="overflow-hidden rounded-lg   bg-[#282828] shadow-md ring-1 ring-black ring-opacity-5">
                   <div className="flex items-center justify-between px-5 pt-4">
                     <div>
@@ -122,16 +114,14 @@ export default function Example() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                      >
+                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">
                         {item.name}
                       </a>
                     ))}
                   </div>
                   <a
                     href="#"
-                    className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
-                  >
+                    className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">
                     Log in
                   </a>
                 </div>
@@ -142,7 +132,7 @@ export default function Example() {
           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl font-bold tracking-tight text-gray-100 sm:text-5xl md:text-6xl">
-                <span className="block mb-4">Shop anything</span>{" "}
+                <span className="block mb-4">Shop anything</span>{' '}
                 <span className="block text-[#00564D] xl:inline">
                   We got your Warranty Covered
                 </span>
@@ -154,16 +144,14 @@ export default function Example() {
                 <div className="rounded-md shadow">
                   <Link
                     href="/store"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#00564d] px-8 py-3 text-base font-medium text-gray-100 hover:bg-[#00564d] md:py-4 md:px-10 md:text-lg"
-                  >
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#00564d] px-8 py-3 text-base font-medium text-gray-100 hover:bg-[#00564d] md:py-4 md:px-10 md:text-lg">
                     Store
                   </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Link
                     href="/login"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#ade4de] px-8 py-3 text-base font-medium text-[#00564d] hover:bg-[#00897b] md:py-4 md:px-10 md:text-lg"
-                  >
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#ade4de] px-8 py-3 text-base font-medium text-[#00564d] hover:bg-[#00897b] md:py-4 md:px-10 md:text-lg">
                     Login
                   </Link>
                 </div>
