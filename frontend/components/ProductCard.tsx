@@ -14,11 +14,13 @@ const customStyles = {
   },
 };
 export default function ProductCard({ card }: { card: any }) {
+  const [pid, setPid] = React.useState(1001);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   let subtitle: any;
   function closeModal() {
     setIsOpen(false);
   }
+
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
     // subtitle.style.color = '#f00';
@@ -31,7 +33,7 @@ export default function ProductCard({ card }: { card: any }) {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal">
-        <BuyModal onRequestClose={closeModal} />
+        <BuyModal onRequestClose={closeModal} pid={pid} />
       </Modal>
       <div className="max-w-sm bg-gray-200 bg-opacity-20 rounded overflow-hidden shadow-lg m-4 ">
         {/* <Image src={card.image} alt="product" height=/> */}
@@ -45,7 +47,10 @@ export default function ProductCard({ card }: { card: any }) {
             <span>Rs. {card.price}</span>
             <span className="text-[#00564d]">{card.rating.rate}</span>
           </div>
-          <div className="font-bold text-xl mb-2">{card.title.slice(0, 30)}{card.title.length>30?"...":""}</div>
+          <div className="font-bold text-xl mb-2">
+            {card.title.slice(0, 30)}
+            {card.title.length > 30 ? '...' : ''}
+          </div>
           <p className="text-[#00897b]">{card.category}</p>
           <p>{card.warranty}</p>
           <p className="text-gray-600 text-base">

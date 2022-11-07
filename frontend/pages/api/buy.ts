@@ -34,6 +34,8 @@ export default async function handler(
   const serialNo = Math.floor(10000 + Math.random() * 90000);
   const product = products.find((p) => p.id === productID);
 
+  console.log(product);
+
   if (!product) throw new Error('Product not found');
 
   const jsonToPin = {
