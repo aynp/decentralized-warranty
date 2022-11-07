@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-export const User = new Schema({
-  id: String,
-  warranties: [String],
-});
+ const userSchema = new Schema({
+   id: { type: String, unique: true },
+   wallet: { type: String, unique: true },
+   warranties: [String],
+ });
+
+ export default mongoose.models.User || mongoose.model("User", userSchema);
