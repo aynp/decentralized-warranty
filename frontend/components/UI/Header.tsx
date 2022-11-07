@@ -6,7 +6,8 @@ const navigation = [
   { name: 'Store', href: '/store', current: true },
   { name: 'Home', href: '/', current: false },
 ];
-
+import Image from  'next/image';
+import img from "../../public/dwlogo.png";
 export default function Example() {
   return (
     <Disclosure as="nav" className="bg-gray-100">
@@ -28,18 +29,12 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                  <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
+
                   </Link>
                   <Link href="/">
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                  <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
+
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

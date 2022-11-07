@@ -47,6 +47,7 @@ export default function ProductCard({ card }: { card: any }) {
           </div>
           <div className="font-bold text-xl mb-2">{card.title.slice(0, 30)}{card.title.length>30?"...":""}</div>
           <p className="text-[#00897b]">{card.category}</p>
+          <p>{card.warranty}</p>
           <p className="text-gray-600 text-base">
             {card.description.slice(0, 100)}...
           </p>

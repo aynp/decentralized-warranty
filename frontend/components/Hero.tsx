@@ -9,6 +9,9 @@ import {
   useDisconnect,
   useMetamask,
 } from '@thirdweb-dev/react';
+import Image from 'next/image';
+import img from "../public/dwlogo.png";
+
 const navigation = [{ name: 'Store', href: '/store' }];
 
 export default function Example() {
@@ -37,11 +40,8 @@ export default function Example() {
                   <div className="flex w-full items-center justify-between md:w-auto">
                     <a href="#">
                       <span className="sr-only">Shopler</span>
-                      <img
-                        alt="Your Company"
-                        className="h-8 w-auto sm:h-10"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      />
+                      <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
+
                     </a>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md   bg-gray-100 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -93,11 +93,8 @@ export default function Example() {
                 <div className="overflow-hidden rounded-lg   bg-gray-100 shadow-md ring-1 ring-black ring-opacity-5">
                   <div className="flex items-center justify-between px-5 pt-4">
                     <div>
-                      <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt=""
-                      />
+                    <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
+
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md   bg-gray-100 p-2 text-gray-100 hover:bg-white hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

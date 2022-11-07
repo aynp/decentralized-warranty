@@ -37,7 +37,7 @@ export default function Example() {
     <div className="bg-gray-100 mt-12 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-lg font-semibold text-[#00897b]">Shopify</h2>
+          <h2 className="text-lg font-semibold text-[#00897b]">decentWarranty</h2>
           <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-800 sm:text-4xl">
             A better way to save your warranty
           </p>
