@@ -22,7 +22,7 @@
     "**/*.ts",
     "**/*.tsx",
     "utils/ether.js",
-    "data/product.ts"
+    "data/product"
   ],
   "exclude": ["node_modules"]
 }
