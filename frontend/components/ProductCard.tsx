@@ -10,7 +10,7 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    background: '#282828',
+    background: 'white',
   },
 };
 export default function ProductCard({ card }: { card: any }) {
@@ -33,7 +33,7 @@ export default function ProductCard({ card }: { card: any }) {
         contentLabel="Example Modal">
         <BuyModal onRequestClose={closeModal} />
       </Modal>
-      <div className="max-w-sm bg-gray-800 bg-opacity-20 rounded overflow-hidden shadow-lg m-4 ">
+      <div className="max-w-sm bg-gray-200 bg-opacity-20 rounded overflow-hidden shadow-lg m-4 ">
         {/* <Image src={card.image} alt="product" height=/> */}
         <img
           className="w-full h-[400px] object-contain bg-white"
@@ -45,10 +45,10 @@ export default function ProductCard({ card }: { card: any }) {
             <span>Rs. {card.price}</span>
             <span className="text-[#00564d]">{card.rating.rate}</span>
           </div>
-          <div className="font-bold text-xl mb-2">{card.title}</div>
+          <div className="font-bold text-xl mb-2">{card.title.slice(0, 30)}{card.title.length>30?"...":""}</div>
           <p className="text-[#00897b]">{card.category}</p>
-          <p className="text-gray-300 text-base">
-            {card.description.slice(0, 160)}...
+          <p className="text-gray-600 text-base">
+            {card.description.slice(0, 100)}...
           </p>
           <button
             onClick={() => setIsOpen(true)}

@@ -34,11 +34,11 @@ const features = [
 
 export default function Example() {
   return (
-    <div className="bg-[#282828] mt-12 py-12">
+    <div className="bg-gray-100 mt-12 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-lg font-semibold text-[#00897b]">Shopify</h2>
-          <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-800 sm:text-4xl">
             A better way to save your warranty
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">

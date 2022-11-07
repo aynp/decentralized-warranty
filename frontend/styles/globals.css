@@ -23,8 +23,8 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background:#282828 ;
+    color: black;
+    background: rgb(243 244 246 / 2);
 
   }
 }

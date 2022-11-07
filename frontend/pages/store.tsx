@@ -10,7 +10,7 @@ export default function Store() {
       <p className="mt-16 mb-16 text-center font-semibold text-6xl">Shop</p>
       <div className="flex flex-wrap mt-10 mb-10 justify-center">
         {products.map((card) => {
-          return <ProductCard card={card} />;
+          return <ProductCard key={card.id} card={card} />;
         })}
       </div>
     </Layout>
