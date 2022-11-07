@@ -37,6 +37,7 @@ export default function Example() {
                       <Image
                         src={img}
                         height={50}
+                        layout="fixed"
                         width={50}
                         alt="dwlogo"
                         className="mr-3 h-8"
@@ -96,8 +97,9 @@ export default function Example() {
                     <div>
                       <Image
                         src={img}
-                        height={50}
                         width={50}
+                        height={50}
+                        layout="fixed"
                         alt="dwlogo"
                         className="mr-3 h-8"
                       />
