@@ -17,6 +17,7 @@ async function listNFTs(address : string) {
     const tokenURI = await Contract.tokenURI(tokenID);
     listNFTs.push(tokenURI);
   }
+  return listNFTs;
 }
 
 export { mintNFT, listNFTs };
