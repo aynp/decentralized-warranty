@@ -6,18 +6,14 @@ import {
   useAddress,
   useUser,
   useLogin,
-  useLogout,
+  useDisconnect,
   useMetamask,
 } from '@thirdweb-dev/react';
-const navigation = [
-  { name: 'Store', href: '/store' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-];
+const navigation = [{ name: 'Store', href: '/store' }];
 
 export default function Example() {
   const address = useAddress();
-  const disconnect = useLogout();
+  const disconnect = useDisconnect();
   console.log(address);
   return (
     <div className="relative overflow-hidden  bg-gray-100">
@@ -69,7 +65,8 @@ export default function Example() {
                       onClick={disconnect}
                       type="submit"
                       className="text-sm">
-                      Log Out
+                      Log Out{' '}
+                      <span className="text-red-500 mx-4">{address}</span>
                     </button>
                   ) : (
                     <a

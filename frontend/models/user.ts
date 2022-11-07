@@ -1,8 +1,11 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-export const User = new Schema({
-  id: String,
+const userSchema = new Schema({
+  id: { type: String, unique: true },
+  wallet: { type: String },
   warranties: [String],
 });
+
+export default mongoose.models.User || mongoose.model('User', userSchema);

@@ -1,15 +1,21 @@
-import { ethers } from "ethers";
-import { Contract, ContractWithSigner } from "./ether";
+import { ethers } from 'ethers';
+import { Contract, ContractWithSigner } from './ether';
 
-function mintNFT(serialNo: string, ownerWallet: string, linkIPFS: string) {
-  //check if ownerWallet is a valid wallet address
-  console.log("mintNFT", serialNo, ownerWallet, linkIPFS);
-
+async function mintNFT(
+  serialNo: string,
+  ownerWallet: string,
+  IPFShash: string
+) {
   if (!ethers.utils.isAddress(ownerWallet))
-    throw new Error("Invalid wallet address");
-  //validate serialNo
+    throw new Error('Invalid wallet address');
 
-  return ContractWithSigner.mintNFT(serialNo, ownerWallet, linkIPFS);
+  console.log({ serialNo, ownerWallet, linkIPFS: IPFShash });
+
+  try {
+    await ContractWithSigner.safeMint(ownerWallet, serialNo, IPFShash);
+  } catch (error) {
+    console.log('🔥 Error');
+  }
 }
 
 async function listNFTs(address: string) {
