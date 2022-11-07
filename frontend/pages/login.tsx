@@ -1,13 +1,14 @@
 import { useUser, useLogin, useLogout } from '@thirdweb-dev/react/solana';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { ConnectWallet, useAddress } from '@thirdweb-dev/react';
+import Link from 'next/link';
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Example() {
   // const connect = useMetamask();
   const address = useAddress();
   const { user } = useUser();
-  
+
   return (
     <div className="grid place-items-center h-screen">
       <div className="p-4 w-full max-w-sm rounded-lg border shadow-md sm:p-6 border-black">
@@ -19,7 +20,7 @@ export default function Example() {
             <h2 className="text-lg font-bold mb-2">EVM Based</h2>
             {address ? (
               <>
-                <a href="/">Login with Wallet</a>
+                <Link href="/">Login with Wallet</Link>
               </>
             ) : (
               <ConnectWallet />

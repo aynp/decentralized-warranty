@@ -32,7 +32,7 @@ export default function Example() {
                 aria-label="Global">
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
-                    <a href="#">
+                    <Link href="#">
                       <span className="sr-only">Shopler</span>
                       <Image
                         src={img}
@@ -41,7 +41,7 @@ export default function Example() {
                         alt="dwlogo"
                         className="mr-3 h-8"
                       />
-                    </a>
+                    </Link>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md   bg-gray-100 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Open main menu</span>
@@ -52,12 +52,12 @@ export default function Example() {
                 </div>
                 <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="font-medium text-gray-500 hover:text-gray-400">
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                   {address ? (
                     <button
@@ -68,11 +68,11 @@ export default function Example() {
                       <span className="text-red-500 mx-4">{address}</span>
                     </button>
                   ) : (
-                    <a
+                    <Link
                       href="/login"
                       className="font-medium text-[#00564d] hover:text-indigo-500">
                       Log In
-                    </a>
+                    </Link>
                   )}
                 </div>
               </nav>
@@ -109,19 +109,19 @@ export default function Example() {
                   </div>
                   <div className="space-y-1 px-2 pt-2 pb-3">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
-                  <a
+                  <Link
                     href="#"
                     className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </Popover.Panel>
             </Transition>
