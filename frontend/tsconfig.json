@@ -17,6 +17,12 @@
   },
   "resolveJsonModule": true,
   "esModuleInterop": true,
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/ether.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "utils/ether.js",
+    "data/product.js"
+  ],
   "exclude": ["node_modules"]
 }
