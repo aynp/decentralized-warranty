@@ -1,4 +1,9 @@
-import { BoltIcon, ChatBubbleBottomCenterTextIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline'
+import {
+  BoltIcon,
+  ChatBubbleBottomCenterTextIcon,
+  GlobeAltIcon,
+  ScaleIcon,
+} from '@heroicons/react/24/outline';
 
 const features = [
   {
@@ -25,7 +30,7 @@ const features = [
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
     icon: ChatBubbleBottomCenterTextIcon,
   },
-]
+];
 
 export default function Example() {
   return (
@@ -37,8 +42,8 @@ export default function Example() {
             A better way to save your warranty
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
+            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
+            voluptatum cupiditate veritatis in accusamus quisquam.
           </p>
         </div>
 
@@ -50,14 +55,18 @@ export default function Example() {
                   <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-[#00564d] text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="ml-16 text-lg font-medium leading-6 text-[#00897b]">{feature.name}</p>
+                  <p className="ml-16 text-lg font-medium leading-6 text-[#00897b]">
+                    {feature.name}
+                  </p>
                 </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
+                <dd className="mt-2 ml-16 text-base text-gray-500">
+                  {feature.description}
+                </dd>
               </div>
             ))}
           </dl>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -4,7 +4,7 @@ import {
   useLogin,
   useLogout,
   useMetamask,
-} from "@thirdweb-dev/react";
+} from '@thirdweb-dev/react';
 
 export default function Example() {
   const connect = useMetamask();
@@ -19,8 +19,7 @@ export default function Example() {
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
-            className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-          >
+            className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             Soci
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -31,16 +30,14 @@ export default function Example() {
 
               <button
                 type="submit"
-                className="text-lg p-4 shadow-sm text-white border-0 focus:outline-none rounded-md bg-[#000000] hover:bg-[#0a3650] flex items-center justify-center w-full"
-              >
+                className="text-lg p-4 shadow-sm text-white border-0 focus:outline-none rounded-md bg-[#000000] hover:bg-[#0a3650] flex items-center justify-center w-full">
                 Sign in with Google
               </button>
               <a href="/">
                 <button
                   onClick={connect}
                   type="submit"
-                  className="text-lg p-4 shadow-sm text-white border-0 focus:outline-none rounded-md bg-[#000000] hover:bg-[#0a3650] flex items-center justify-center w-full"
-                >
+                  className="text-lg p-4 shadow-sm text-white border-0 focus:outline-none rounded-md bg-[#000000] hover:bg-[#0a3650] flex items-center justify-center w-full">
                   Sign in with Metamusk
                 </button>
               </a>

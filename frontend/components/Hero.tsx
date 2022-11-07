@@ -153,18 +153,18 @@ export default function Example() {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <Link
-                    href="#"
+                    href="/store"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#00564d] px-8 py-3 text-base font-medium text-gray-100 hover:bg-[#00564d] md:py-4 md:px-10 md:text-lg"
                   >
-                    Get started
+                    Store
                   </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Link
-                    href="/store"
+                    href="/login"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#ade4de] px-8 py-3 text-base font-medium text-[#00564d] hover:bg-[#00897b] md:py-4 md:px-10 md:text-lg"
                   >
-                    Shop Now
+                    Login
                   </Link>
                 </div>
               </div>
