@@ -1,20 +1,9 @@
 import Image from 'next/image';
 
-import {
-  useAddress,
-  useUser,
-  useLogin,
-  useLogout,
-  useMetamask,
-} from '@thirdweb-dev/react';
+import { useMetamask } from '@thirdweb-dev/react';
 
 export default function Example() {
   const connect = useMetamask();
-
-  const login = useLogin();
-  const logout = useLogout();
-  const { user } = useUser();
-
   return (
     <div className="grid place-items-center h-screen">
       <div className="p-4 w-full max-w-sm rounded-lg border shadow-md sm:p-6 border-black">
@@ -37,7 +26,8 @@ export default function Example() {
           </li>
           <li>
             <a
-              href="#"
+              onClick={connect}
+              href="/store"
               className="flex items-center p-3 text-base font-bold text-white rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
               <Image
                 alt="Metamask"
