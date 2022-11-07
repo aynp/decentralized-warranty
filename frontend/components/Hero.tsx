@@ -65,7 +65,9 @@ export default function Example() {
                       type="submit"
                       className="text-sm">
                       Log Out{' '}
-                      <span className="text-red-500 mx-4">{address}</span>
+                      <span className="text-red-500 mx-4">
+                        {address.slice(0, 6)}...
+                      </span>
                     </button>
                   ) : (
                     <Link
