@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "@solana/wallet-adapter-react": "^0.15.24"
-  }
-}
