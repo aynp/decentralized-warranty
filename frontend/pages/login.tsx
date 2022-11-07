@@ -1,15 +1,39 @@
-import Image from 'next/image';
-
-import { useMetamask } from '@thirdweb-dev/react';
+import { useUser, useLogin, useLogout } from '@thirdweb-dev/react/solana';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { ConnectWallet, useAddress } from '@thirdweb-dev/react';
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Example() {
-  const connect = useMetamask();
+  // const connect = useMetamask();
+  const address = useAddress();
+  const { user } = useUser();
+
   return (
     <div className="grid place-items-center h-screen">
       <div className="p-4 w-full max-w-sm rounded-lg border shadow-md sm:p-6 border-black">
-        <h5 className="mb-3 text-base font-semibold md:text-xl text-white text-center">
+        <h5 className="mb-3 text-4xl font-semibold text-white text-center">
           Login
         </h5>
+        <div>
+          <div className="ether text-center mb-10">
+            <h2 className="text-lg font-bold mb-2">EVM Based</h2>
+            {address ? (
+              <>
+                <a href="/">Login with Wallet</a>
+              </>
+            ) : (
+              <ConnectWallet />
+            )}
+          </div>
+          <div className="solana flex align-middle justify-center">
+            <div className="text-center">
+              <h2 className="text-lg font-bold mb-2">Solana</h2>
+
+              <WalletMultiButton />
+            </div>
+          </div>
+        </div>
+        {/* <ConnectWallet />
         <ul className="my-4 space-y-3">
           <li>
             <a
@@ -57,7 +81,7 @@ export default function Example() {
               </span>
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
