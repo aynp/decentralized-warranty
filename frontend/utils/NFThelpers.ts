@@ -1,36 +1,42 @@
-import { ethers } from "ethers";
-import { Contract, ContractWithSigner } from "./ether";
+import { ethers } from 'ethers';
+import { Contract, ContractWithSigner } from './ether';
 
-function mintNFT(serialNo: string, ownerWallet: string, linkIPFS: string) {
-  //check if ownerWallet is a valid wallet address
-  console.log("mintNFT", serialNo, ownerWallet, linkIPFS);
-
+async function mintNFT(
+  serialNo: string,
+  ownerWallet: string,
+  IPFShash: string
+) {
   if (!ethers.utils.isAddress(ownerWallet))
-    throw new Error("Invalid wallet address");
-  //validate serialNo
+    throw new Error('Invalid wallet address');
 
-  return ContractWithSigner.mintNFT(serialNo, ownerWallet, linkIPFS);
-}
+  console.log({ serialNo, ownerWallet, linkIPFS: IPFShash });
 
-async function listNFTs(address: string) {
-  const number = await Contract.balanceOf(address);
-  const listNFTs: string[] = [];
-  for (let i = 0; i < number; i++) {
-    const tokenID = await Contract.tokenOfOwnerByIndex(address, i);
-    const tokenURI = await Contract.tokenURI(tokenID);
-    listNFTs.push(tokenURI);
+  try {
+    await ContractWithSigner.safeMint(ownerWallet, serialNo, IPFShash);
+  } catch (error) {
+    console.log('🔥 Error');
   }
-  return listNFTs;
 }
 
-async function getTokenURIs(tokenIDs: string[]) {
-  const tokenURIs = [];
-  for (let i = 0; i < tokenIDs.length; i++) {
-    const tokenURI = Contract.tokenURI(tokenIDs[i]);
-    tokenURIs.push(tokenURI);
-  }
+// async function listNFTs(address: string) {
+//   const number = await Contract.balanceOf(address);
+//   const listNFTs: string[] = [];
+//   for (let i = 0; i < number; i++) {
+//     const tokenID = await Contract.tokenOfOwnerByIndex(address, i);
+//     const tokenURI = await Contract.tokenURI(tokenID);
+//     listNFTs.push(tokenURI);
+//   }
+//   return listNFTs;
+// }
 
-  return await Promise.all(tokenURIs);
-}
+// async function getTokenURIs(tokenIDs: string[]) {
+//   const tokenURIs = [];
+//   for (let i = 0; i < tokenIDs.length; i++) {
+//     const tokenURI = Contract.tokenURI(tokenIDs[i]);
+//     tokenURIs.push(tokenURI);
+//   }
 
-export { mintNFT, listNFTs, getTokenURIs };
+//   return await Promise.all(tokenURIs);
+// }
+
+export { mintNFT };
