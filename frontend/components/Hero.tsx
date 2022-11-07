@@ -32,8 +32,8 @@ export default function Example() {
                 aria-label="Global">
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
-                    <Link href="#">
                       <span className="sr-only">Shopler</span>
+                    <Link href="/">
                       <Image
                         src={img}
                         height={50}
@@ -118,7 +118,7 @@ export default function Example() {
                     ))}
                   </div>
                   <Link
-                    href="#"
+                    href="/"
                     className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">
                     Log in
                   </Link>

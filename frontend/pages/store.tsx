@@ -1,5 +1,5 @@
 import React from 'react';
-import { products } from '../data/product.js';
+import { products } from '../data/product';
 import Layout from '../components/UI/Layout';
 import ProductCard from '../components/ProductCard';
 

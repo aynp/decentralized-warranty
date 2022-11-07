@@ -15,29 +15,20 @@ export default function Footer() {
               alt="dwlogo"
               className="mr-3 h-8"
             />
+          </Link>
 
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-600">
               Shopfy
             </span>
-          </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-700">
-            <li>
-              <Link href="/shop" className="mr-4 hover:underline md:mr-6 ">
+            <li className="mr-4 hover:underline md:mr-6 ">
+              <Link href="/shop" >
                 Shop
               </Link>
             </li>
-            <li>
-              <Link href="#" className="mr-4 hover:underline md:mr-6">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="mr-4 hover:underline md:mr-6 ">
-                Licensing
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:underline">
+           
+            <li className="hover:underline">
+              <Link href="/" >
                 Contact
               </Link>
             </li>

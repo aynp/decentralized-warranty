@@ -28,14 +28,20 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
+                  <div>
+
                   <Link href="/">
                   <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
 
                   </Link>
+                  </div>
+                  {/* <div>
+
                   <Link href="/">
                   <Image src={img} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
 
                   </Link>
+                  </div> */}
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -72,7 +78,7 @@ export default function Example() {
                       <img
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt="main img"
                       />
                     </Menu.Button>
                   </div>
@@ -99,14 +105,17 @@ export default function Example() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={
-                              (active ? 'bg-[#00564d]' : '') +
-                              ' block px-4 py-2 text-sm text-gray-700'
-                            }>
-                            Settings
-                          </a>
+                          <div  className={
+                            (active ? 'bg-[#00564d]' : '') +
+                            ' block px-4 py-2 text-sm text-gray-700'
+                          }>
+
+                          <Link
+                            href="/mine"
+                           >
+                            My Product
+                          </Link>
+                              </div>
                         )}
                       </Menu.Item>
                       <Menu.Item>
@@ -137,8 +146,8 @@ export default function Example() {
                   href={item.href}
                   className={
                     (item.current
-                      ? 'bg-gray-900 text-gray-700'
-                      : 'text-gray-300 hover:bg-[#00564d] hover:text-gray-700') +
+                      ? 'bg-gray-900 text-gray-100'
+                      : 'text-gray-600 hover:bg-[#00564d] hover:text-gray-800') +
                     ' block px-3 py-2 rounded-md text-base font-medium'
                   }
                   aria-current={item.current ? 'page' : undefined}>
