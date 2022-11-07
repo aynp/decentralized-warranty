@@ -2,6 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
 
-module.exports = nextConfig
+  images: {
+    domains: [
+      'fakestoreapi.com',
+      'upload.wikimedia.org',
+      '3632261023-files.gitbook.io',
+    ],
+  },
+};
+
+module.exports = nextConfig;
