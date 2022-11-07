@@ -6,10 +6,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'GET') {
+  if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
   }
-  const query: any = req.query;
-  const list: string[] = await listNFTs(query.address);
+  const address = req.body.address;
+
+  console.log(address);
+
+  const list: string[] = await listNFTs(address);
   res.status(200).json(list);
 }

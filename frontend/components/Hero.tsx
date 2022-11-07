@@ -32,7 +32,7 @@ export default function Example() {
                 aria-label="Global">
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
-                      <span className="sr-only">Shopler</span>
+                    <span className="sr-only">Shopler</span>
                     <Link href="/">
                       <Image
                         src={img}
