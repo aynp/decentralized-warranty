@@ -9,25 +9,25 @@ const features = [
   {
     name: 'De-centerilized warranty',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'You just focus on buying the product with out a worry we have the Warranty covered fro you.',
     icon: GlobeAltIcon,
   },
   {
     name: 'No hidden fees',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "We don't take any hidden surplus hidden fees from the user",
     icon: ScaleIcon,
   },
   {
     name: 'Reedeam your warranty anytime anywhere',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'You can reedeam your warranty any time you like any place you like ',
     icon: BoltIcon,
   },
   {
     name: 'Mobile notifications',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      "We know you can't active always but we got you covered with our mobile notification feature",
     icon: ChatBubbleBottomCenterTextIcon,
   },
 ];
@@ -42,8 +42,7 @@ export default function Example() {
             A better way to save your warranty
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
-            voluptatum cupiditate veritatis in accusamus quisquam.
+            Want your warranties to be secured we got you there
           </p>
         </div>
 
