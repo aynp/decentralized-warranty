@@ -1,21 +1,21 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useAddress, useDisconnect } from '@thirdweb-dev/react';
-
 
 const navigation = [
   { name: 'Store', href: '/store', current: true },
   { name: 'Home', href: '/', current: false },
 ];
-import Image from  'next/image';
-import logo from "../../public/dwlogo.png";
-import profile from "../../public/profile.jpg";
+import Image from 'next/image';
+import logo from '../../public/dwlogo.png';
+import profile from '../../public/account.png';
+// import profile from '/profile.jpg';
 export default function Example() {
   const address = useAddress();
   const disconnect = useDisconnect();
-  console.log("my address : ",address);
+  console.log('my address : ', address);
   return (
     <Disclosure as="nav" className="bg-gray-100">
       {({ open }) => (
@@ -36,16 +36,20 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <div>
-
-                  <Link href="/">
-                  <Image src={logo} height={50} width={50} layout="fixed" alt="dwlogo" className="mr-3 h-8"/>
-
-                  </Link>
+                    <Link href="/">
+                      <Image
+                        src={logo}
+                        height={50}
+                        width={50}
+                        layout="fixed"
+                        alt="dwlogo"
+                        className="mr-3 h-8"
+                      />
+                    </Link>
                   </div>
                   {/* <div>
 
                   <Link href="/">
-                  <Image src={logo} height={50} width={50} alt="dwlogo" className="mr-3 h-8"/>
 
                   </Link>
                   </div> */}
@@ -53,7 +57,7 @@ export default function Example() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={
@@ -64,86 +68,79 @@ export default function Example() {
                         }
                         aria-current={item.current ? 'page' : undefined}>
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-               
-
                 {/* Profile dropdown */}
-                {address?
-                <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="sr-only">Open user menu</span>
-                      <span
-                        className="h-8 w-8 rounded-full"
-                      >
-
-                      <Image
-                        src={profile}
-                        className="h-8 w-8 rounded-full"
-
-                        alt="main logo"
-                        />
+                {address ? (
+                  <Menu as="div" className="relative ml-3">
+                    <div>
+                      <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span className="sr-only">Open user menu</span>
+                        <span className="h-8 w-8 rounded-full">
+                          <Image
+                            src={profile}
+                            height={50}
+                            width={50}
+                            className="h-8 w-8 rounded-full"
+                            alt="main logo"
+                          />
                         </span>
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95">
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={
-                              (active ? 'bg-[#00564d]' : '') +
-                              ' block px-4 py-2 text-sm text-gray-700'
-                            }>
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <div  className={
-                            (active ? 'bg-[#00564d]' : '') +
-                            ' block px-4 py-2 text-sm text-gray-700'
-                          }>
-
-                          <a
-                            href="/mine"
-                           >
-                            My Product
-                          </a>
-                              </div>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                        
-                            onClick={disconnect}
-                            className={
-                              (active ? 'bg-[#00564d]' : '') +
-                              ' block px-4 py-2 text-sm text-gray-700'
-                            }>
-                            Sign out
-                          </button>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-                :<></>}
+                      </Menu.Button>
+                    </div>
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95">
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="#"
+                              className={
+                                (active ? 'bg-[#00564d]' : '') +
+                                ' block px-4 py-2 text-sm text-gray-700'
+                              }>
+                              Your Profile
+                            </a>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <div
+                              className={
+                                (active ? 'bg-[#00564d]' : '') +
+                                ' block px-4 py-2 text-sm text-gray-700'
+                              }>
+                              <Link href="/mine">My Product</Link>
+                            </div>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={disconnect}
+                              className={
+                                (active ? 'bg-[#00564d]' : '') +
+                                ' block px-4 py-2 text-sm text-gray-700'
+                              }>
+                              Sign out
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>
